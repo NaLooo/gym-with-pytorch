@@ -56,13 +56,13 @@ class ActorCriticAgent:
     def play_episode(self):
         episode_reward = 0.0
         episode_exp = Experiences()
-        state, _ = self.env.reset()
+        state = self.env.reset()
 
         while True:
             action = self.action(state)
-            next_state, reward, done, truncated, _ = self.env.step(action)
+            next_state, reward, done, _ = self.env.step(action)
             episode_exp.append(state, action, reward, done, next_state)
-            if done or truncated:
+            if done:
                 break
             episode_reward += reward
             state = next_state

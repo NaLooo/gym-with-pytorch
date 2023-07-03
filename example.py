@@ -1,6 +1,3 @@
-# gym-with-pytorch
-## Quick Start
-``` python
 import gym
 
 from trainer import Trainer
@@ -18,10 +15,3 @@ agent = PPOAgent(env, obs_size=env.observation_space.shape[0], action_size=env.a
 trainer = Trainer(TARGET, TARGET_SIZE, REPLAY_SIZE, BATCH_SIZE)
 result = trainer.train_on_policy(agent)
 display_result(result, window_sizes=[20, 100])
-```
-
-### Result of PPO agent on CartPole-v1
-
-Achieved 100-episode average rewards above 400 after 930 episodes played.
-
-![result](/resource/result.png)

@@ -60,10 +60,10 @@ class Experiences:
         return (self.state, self.action, self.reward, self.trajectory_reward, self.done, self.new_state)
 
 
-def display_result(result, sizes, show_unscaled=False):
+def display_result(result, window_sizes, show_unscaled=False):
     if show_unscaled:
         plt.plot(result, label='unscaled')
-    for i in sizes:
+    for i in window_sizes:
         if i > len(result):
             continue
         x = np.arange(i, len(result))
